@@ -102,8 +102,9 @@ sap.ui.define([
                 var model = this.getView().getModel("jsonClases")
 
                 var allData = model.getData()
-
+                //obtenemos el año por el que previamente se ha filtrado
                 var yearFiltrado = this.getView().byId("slYear").getSelectedKey()
+                //Obtenemos el texto del boton
                 var textoBoton = this.getView().byId("btnActivate").getText();
 
                  if(textoBoton == "Desactivar"){
@@ -111,9 +112,10 @@ sap.ui.define([
                  }else{
                      textoBoton = "Desactivar"
                  };
-               /*   this.getView().byId("btnActivate").setText(textoBoton) */
+          
 
                 let index = 0
+                //hacemos loop al array de clases y si se cumple la condicion activamos o desactivamos
                     allData.Clases.forEach((clase)=>{
                         
                         if(clase.Year === yearFiltrado && textoBoton == "Activar"){
@@ -126,7 +128,7 @@ sap.ui.define([
                     });
                     this.getView().byId("btnActivate").setText(textoBoton)
                     textoBoton = " "
-            /*     model.setProperty('/Clases/3/Active', "No") */
+            
             }
 
         });
