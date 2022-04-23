@@ -1,0 +1,29 @@
+<mvc:View
+    controllerName="listadoclases.listadoclases.controller.clases"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+<Shell id="Shell">
+<App id="app">
+<Page id="_IDGenPage1" title="{i18n>titlePage}">
+<content>
+
+<HBox id="_IDGenHBox1" class="hbox" wrap="Wrap">
+ <Label id="labelYear"  labelFor="slYear" text="{i18n>labelYear}" class="sapUiSmallMargin"  />
+  <Select id="slYear" selectedKey="{jsonYears>/yearKey}" forceSelection="false"  items="{jsonYears>/ListYear}">
+    <items>
+        <core:Item id="x1" key="{jsonYears>Key}" text="{jsonYears>Text}"/>
+
+        </items>
+        </Select>
+        <Button id="btonFilter" text="Filtrar" icon="sap-icon://search" press="filtrar"/>
+        <Button id="clearFilter" text="Limpiar Filtro" icon="sap-icon://clear-filter" press="clearfiltrar"/>
+</HBox>
+ <core:Fragment fragmentName="listadoclases.listadoclases.fragment.TableClases" type="XML"/>
+</content>
+</Page>
+</App>
+</Shell>
+</mvc:View>

@@ -1,0 +1,86 @@
+{
+    
+    "Clases": [
+
+        {   "Active": "Si",
+            "ClassID": "1000",
+            "Year": "2017",
+            "ItemID": "CURS_SAPUI5",
+            "Title": "Introducción a SAPUI5",
+            "StartDate": "01/04/2017",
+            "EndDate": "17/05/2017"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1001",
+            "Year": "2018",
+            "ItemID": "CURS_INGLESC1",
+            "Title": "Advanced English C1",
+            "StartDate": "12/07/2018",
+            "EndDate": "22/07/2018"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1002",
+            "Year": "2018",
+            "ItemID": "CURS_MAQUINISTA",
+            "Title": "Cursos de Maquinista",
+            "StartDate": "01/01/2018",
+            "EndDate": "31/05/2018"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1003",
+            "Year": "2019",
+            "ItemID": "145909#1",
+            "Title": "Montaje y desmontaje de Motores",
+            "StartDate": "02/02/2019",
+            "EndDate": "23/03/2019"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1004",
+            "Year": "2020",
+            "ItemID": "145909#2",
+            "Title": "Montaje y desmontaje de Motores",
+            "StartDate": "01/04/2020",
+            "EndDate": "21/04/2020"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1005",
+            "Year": "2020",
+            "ItemID": "145909#3",
+            "Title": "Montaje y desmontaje de Motores",
+            "StartDate": "01/04/2020",
+            "EndDate": "21/04/2020"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1006",
+            "Year": "2021",
+            "ItemID": "145909#4",
+            "Title": "Cursos de mecanica",
+            "StartDate": "01/04/2021",
+            "EndDate": "21/04/2021"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1007",
+            "Year": "2022",
+            "ItemID": "145609#9",
+            "Title": "Conduccion",
+            "StartDate": "14/01/2022",
+            "EndDate": "15/12/2022"
+        },
+        {
+            "Active": "Si",
+            "ClassID": "1008",
+            "Year": "2022",
+            "ItemID": "145609#12",
+            "Title": "Conduccion",
+            "StartDate": "14/01/2022",
+            "EndDate": "15/12/2022"
+        }
+
+]}

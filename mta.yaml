@@ -1,0 +1,82 @@
+_schema-version: "3.2"
+ID: clases
+version: 0.0.1
+modules:
+- name: clases-approuter
+  type: approuter.nodejs
+  path: clases-approuter
+  requires:
+  - name: clases_html_repo_runtime
+  - name: uaa_clases
+  - name: clases-destination-service
+    group: destinations
+    properties:
+      forwardAuthToken: false
+      name: ui5
+      url: https://ui5.sap.com
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: clases-app-content
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: clases-repo-host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - listadoclaseslistadoclases.zip
+      name: listadoclaseslistadoclases
+      target-path: resources/
+- name: listadoclaseslistadoclases
+  type: html5
+  path: listadoclases
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+resources:
+- name: clases_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: uaa_clases
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: clases-xsuaa-service
+    service-plan: application
+- name: clases-repo-host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-name: clases-html5-srv
+    service-plan: app-host
+- name: clases-destination-service
+  type: org.cloudfoundry.managed-service
+  parameters:
+    config:
+      HTML5Runtime_enabled: false
+      init_data:
+        instance:
+          destinations:
+          - Authentication: NoAuthentication
+            Name: ui5
+            ProxyType: Internet
+            Type: HTTP
+            URL: https://ui5.sap.com
+          existing_destinations_policy: update
+      version: 1.0.0
+    service: destination
+    service-name: clases-destination-service
+    service-plan: lite
+parameters:
+  deploy_mode: html5-repo
