@@ -6,9 +6,11 @@
             "ClassID": "1000",
             "Year": "2017",
             "ItemID": "CURS_SAPUI5",
+            
             "Title": "Introducción a SAPUI5",
             "StartDate": "01/04/2017",
             "EndDate": "17/05/2017"
+            
         },
         {
             "Active": "Si",

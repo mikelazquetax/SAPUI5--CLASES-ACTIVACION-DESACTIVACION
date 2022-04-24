@@ -3,12 +3,14 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
+    "sap/ui/model/FilterOperator",
+    "sap/ui/core/util/Export",
+    "sap/ui/core/util/ExportTypeCSV"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,Filter,FilterOperator) {
+    function (Controller,Filter,FilterOperator,Export,ExportTypeCSV) {
         "use strict";
 
         return Controller.extend("listadoclases.listadoclases.controller.clases", {
@@ -28,6 +30,11 @@ sap.ui.define([
                 let oJSONModelClases = new sap.ui.model.json.JSONModel()
                 oJSONModelClases.loadData("./localService/Clases.json", false);
                 oView.setModel(oJSONModelClases, "jsonClases")
+
+                let oJSONModelClasesD = new sap.ui.model.json.JSONModel()
+                oJSONModelClasesD.loadData("./localService/Clases.json", false);
+                oView.setModel(oJSONModelClasesD, "jsonClasesD")
+
 
                 //Nos declaramos en local(sin necesidad de fichero json) un nuevo objeto JSON para 
                 //controlar la visibilidad de los botones ACTIVAR Y DESCARGAR
@@ -51,6 +58,13 @@ sap.ui.define([
             },
 //Funcion de Filtro//
             filtrar: function(){
+                let oView = this.getView()
+                let oJSONModelClases = new sap.ui.model.json.JSONModel()
+                oJSONModelClases.loadData("./localService/Clases.json", false);
+                oView.setModel(oJSONModelClases, "jsonClases")
+
+
+
                 this.getView().byId("btnActivate").setText("Desactivar")
                 //Cogemos todos los datos del modelo de años
                 var allData = this.getView().getModel("jsonYears").getData()
@@ -80,6 +94,13 @@ sap.ui.define([
             },
 //Funcion de Limpieza del Filtro//
             clearfiltrar: function(){
+                let oView = this.getView()
+                let oJSONModelClases = new sap.ui.model.json.JSONModel()
+                oJSONModelClases.loadData("./localService/Clases.json", false);
+                oView.setModel(oJSONModelClases, "jsonClases")
+
+
+
                 var modeloNormal = this.getView().getModel("jsonYears")
                 modeloNormal.setProperty("/yearKey", "")
 
@@ -129,7 +150,319 @@ sap.ui.define([
                     this.getView().byId("btnActivate").setText(textoBoton)
                     textoBoton = " "
             
-            }
+            },
 
+//Funcion de descargar
+            onDownload: function(){
+                var model = this.getView().getModel("jsonClases")
+                var allData = model.getData()
+
+                
+
+                var yearFiltrado = this.getView().byId("slYear").getSelectedKey()
+                let allDataDown = {
+                    "Clases":
+                    [
+
+                    ]
+                }
+
+                allData.Clases.forEach((clase)=>{
+                        
+                    if(clase.Year === yearFiltrado){
+             
+                        allDataDown.Clases.push(clase)
+                    }
+           
+                });
+                model.setData(allDataDown)
+
+                var yearFiltrado = this.getView().byId("slYear").getSelectedKey()
+
+
+                var oExport = new Export({
+
+                    exportType: new ExportTypeCSV({
+                        fileExtension: "csv",
+                        separatorChar: ","
+                    }),
+
+                    models: model,
+
+                    rows: {
+                        path: "/Clases"
+                    },
+
+                    columns: [{
+                        name: "DMN_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "CPNT_TYP_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "ACT_CPNT_ID",
+                        template:{
+                            content: "{ItemID}"
+                        }
+                    },{
+                        name: "DMN_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "REV_DTE",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "DESCRIPTION",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "SHORT_DESCRIPTION",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "SSG_SEG_NUM",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "SEG_DESC",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "START_TME",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "END_TME",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "FACILITY_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "LOCN_ID1",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "INST_ID1",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "SELF_ENRL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "AUTO_FILL_ENRL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "DISPLAY_IN_SCHD_TZ",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "TIMEZONE_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "DISPLAY_IN_SCHD_TZ",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "MIN_ENRL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "MAX_ENRL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "CONTACT",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "EMAIL_ADDR",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "PHON_NUM",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "FAX_NUM",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "ENRL_CUT_DTE",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "COMMENTS",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "CHGBCK_METHOD",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "COL_NUM99_VAL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "COL_NUM1_VAL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "COL_NUM3_VAL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "COL_NUM4_VAL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "COL_NUM5_VAL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "EMAIL_INSTRUCTOR",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "EMAIL_STUDENT",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "EMAIL_SUPERVISOR",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "EMAIL_CONTACTS",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "USER_CAN_WAITLIST",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "SUPER_ENRL",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "APPROVAL_REQD",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "TAP_DEF_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "NOTACTIVE",
+                        template:{
+                            content: "{Active}"
+                        }
+                    },{
+                        name: "INCLUDE_IN_GOVT_REPORTING",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "TRAINING_TYPE",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "LGL_ENTITY_2483_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "ALLOW_EXCEPTIONS_WHEN_RCRD_LRN",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "WITHDRAW_TAP_DEF_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "WITHDRAW_APPROVAL_REQD",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "CANCEL_POLICY_ID",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "WITHDRAW_CUTOFF_DTE",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "ENABLE_CANCEL_REASON",
+                        template:{
+                            content: ""
+                        }
+                    },{
+                        name: "WITHDRAW_SUP_ASSIGNED_SCHED!##!",
+                        template:{
+                            content: ""
+                        }
+                    }]
+                    
+            });
+            console.log(oExport);
+			oExport.saveFile().catch(function(oError) {
+
+			}).then(function() {
+				oExport.destroy();
+			});
+            
+        }
         });
     });
