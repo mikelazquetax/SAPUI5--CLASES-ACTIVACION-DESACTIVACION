@@ -6,8 +6,8 @@
     xmlns:core="sap.ui.core"
 >
 <Shell id="Shell">
-<App id="app">
-<Page id="_IDGenPage1" title="{i18n>titlePage}">
+<App id="app" class="myAppDemoWT">
+<Page id="_IDGenPage1" title="{i18n>titlePage}" >
 <content>
 
 <HBox id="_IDGenHBox1" class="hbox" wrap="Wrap">
@@ -18,8 +18,8 @@
 
         </items>
         </Select>
-        <Button id="btonFilter" text="Filtrar" icon="sap-icon://search" press="filtrar"/>
-        <Button id="clearFilter" text="Limpiar Filtro" icon="sap-icon://clear-filter" press="clearfiltrar"/>
+        <Button  class="myCustomButton" id="btonFilter" text="Filtrar" icon="sap-icon://search" press="filtrar"/>
+        <Button class="myCustomButton" id="clearFilter" text="Limpiar Filtro" icon="sap-icon://clear-filter" press="clearfiltrar"/>
 </HBox>
  <core:Fragment fragmentName="listadoclases.listadoclases.fragment.TableClases" type="XML"/>
 </content>

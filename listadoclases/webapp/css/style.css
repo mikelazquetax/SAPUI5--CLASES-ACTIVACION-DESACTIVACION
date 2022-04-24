@@ -1,1 +1,37 @@
 /* Enter your custom styles here */
+
+.sapMIBar.sapMHeader-CTX{
+
+   background-color: purple; 
+
+}
+
+.sapMBar .sapMBarRight.sapMBarContainer>*:first-child:last-child, .sapMBar .sapMBarLeft.sapMBarContainer>*:first-child:last-child, .sapMBar .sapMBarMiddle .sapMBarContainer>*:first-child:last-child{
+color: white;
+font-weight: bold;
+}
+.sapMFlexBoxAlignContentStretch {
+    margin-top: 10px;
+    padding: 5px;
+}
+.sapMFlexItem{
+margin: 5px
+}
+.sapMTableTH {
+
+    background-color: purple;
+}
+
+.sapUiTableHeaderDataCell .sapMLabel, .sapMListTbl .sapMColumnHeader .sapMLabel{
+    color: white;
+}
+
+.sapUiSizeCompact .sapMBtnInner.sapMBtnText{
+    color: purple
+ 
+}
+
+.sapUiSizeCompact .sapMBtnInner.sapMBtnText:hover{
+    color: green
+ 
+}

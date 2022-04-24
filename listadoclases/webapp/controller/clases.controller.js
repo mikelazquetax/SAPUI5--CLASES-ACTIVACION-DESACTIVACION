@@ -58,6 +58,8 @@ sap.ui.define([
             },
 //Funcion de Filtro//
             filtrar: function(){
+
+                //Tenemos que volver a instanciar el modelo clases con los datos de BBDD ya que despues de pulsar descargar, el modelo cambia
                 let oView = this.getView()
                 let oJSONModelClases = new sap.ui.model.json.JSONModel()
                 oJSONModelClases.loadData("./localService/Clases.json", false);
@@ -94,6 +96,8 @@ sap.ui.define([
             },
 //Funcion de Limpieza del Filtro//
             clearfiltrar: function(){
+
+                //Tenemos que volver a instanciar el modelo clases con los datos de BBDD ya que despues de pulsar descargar, el modelo cambia
                 let oView = this.getView()
                 let oJSONModelClases = new sap.ui.model.json.JSONModel()
                 oJSONModelClases.loadData("./localService/Clases.json", false);
@@ -183,6 +187,7 @@ sap.ui.define([
                 var oExport = new Export({
 
                     exportType: new ExportTypeCSV({
+                    
                         fileExtension: "csv",
                         separatorChar: ","
                     }),
@@ -457,7 +462,7 @@ sap.ui.define([
                     
             });
             console.log(oExport);
-			oExport.saveFile().catch(function(oError) {
+			oExport.saveFile('scheduledoffering_data_renfeopera').catch(function(oError) {
 
 			}).then(function() {
 				oExport.destroy();
