@@ -3,7 +3,8 @@
 <Button id="btnActivate" visible="{jsonVisibilidad>/visibleBtnActivar}" icon="sap-icon://activate" text="{jsonTextoBotones>/texto}"  press="onActivate"></Button>
 <Button id="btnDownload" visible="{jsonVisibilidad>/visibleBtnDescargar}" icon="sap-icon://download" text="{i18n>DescargarClases}"  press="onDownload"></Button>
 
-<Table id="tableClases" items="{jsonClases>/Clases}">
+
+<Table id="tableClases" items="{jsonClases>/Clases}" >
 <columns>
 <Column id="_IDGenColumn1" >
     <header>
@@ -39,15 +40,20 @@
         <Label id="_IDGenLabel6" text="{i18n>StartDate}"/>
     </header>
   </Column>  
-        <Column id="_IDGenColumn7" >
+    <Column id="_IDGenColumn7" >
     <header>
         <Label id="_IDGenLabel7" text="{i18n>EndDate}"/>
+    </header>
+  </Column>  
+  <Column id="_IDGenColumn17" >
+    <header>
+        <Label id="_IDGenLabel17" text="{i18n>Excluir}" visible="{jsonVisibilidad>/visibleBtnDescargar}"/>
     </header>
   </Column>  
 </columns>
 
   <items>
-    <ColumnListItem id="_IDGenColumnListItem1" type="Active"  >
+    <ColumnListItem id="_IDGenColumnListItem1"   >
         <cells>
         <Label id="_IDGenLabel8" text="{jsonClases>Active}"/>
         <Label id="_IDGenLabel9" text="{jsonClases>ClassID} "/>
@@ -56,6 +62,7 @@
         <Label id="_IDGenLabel12" text="{jsonClases>Title}"/>
         <Label id="_IDGenLabel13" text="{jsonClases>StartDate}"/>
         <Label id="_IDGenLabel14" text="{jsonClases>EndDate}"/>
+        <core:Icon  press="onDelete" id="_IDGenLabel15" src="sap-icon://decline" visible="{jsonVisibilidad>/visibleBtnDescargar}" ></core:Icon>
         </cells>
     </ColumnListItem>
     </items>

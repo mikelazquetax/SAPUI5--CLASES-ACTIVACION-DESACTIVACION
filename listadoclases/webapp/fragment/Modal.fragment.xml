@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns:core = "sap.ui.core" xmlns="sap.m">
+<Dialog id="_IDGenDialog1" title="{i18n>Excluir}" >
+<Text id="Exc" text="{idArtBorrado}"></Text>
+<Button id="Close" text="{i18n>cerrar}" press="cerrarModal"></Button>
+</Dialog>
+</core:FragmentDefinition>

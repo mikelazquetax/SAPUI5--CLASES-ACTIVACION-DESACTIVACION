@@ -6,10 +6,25 @@
             "ClassID": "1000",
             "Year": "2017",
             "ItemID": "CURS_SAPUI5",
-            
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Introducción a SAPUI5",
             "StartDate": "01/04/2017",
-            "EndDate": "17/05/2017"
+            "EndDate": "02/04/2017",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2017 08:00:00",
+                    "end_tme": "APR-01-2017 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2017 08:00:00",
+                    "end_tme": "APR-02-2017 09:00:00"
+                
+                }
+            ]
             
         },
         {
@@ -17,72 +32,174 @@
             "ClassID": "1001",
             "Year": "2018",
             "ItemID": "CURS_INGLESC1",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Advanced English C1",
-            "StartDate": "12/07/2018",
-            "EndDate": "22/07/2018"
+            "StartDate": "01/04/2018",
+            "EndDate": "02/04/2018",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2018 08:00:00",
+                    "end_tme": "APR-01-2018 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2018 08:00:00",
+                    "end_tme": "APR-02-2018 09:00:00"
+                
+                }
+            ]
         },
         {
             "Active": "Si",
             "ClassID": "1002",
             "Year": "2018",
             "ItemID": "CURS_MAQUINISTA",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Cursos de Maquinista",
-            "StartDate": "01/01/2018",
-            "EndDate": "31/05/2018"
+            "StartDate": "01/04/2018",
+            "EndDate": "02/04/2018",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2018 08:00:00",
+                    "end_tme": "APR-01-2018 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2018 08:00:00",
+                    "end_tme": "APR-02-2018 09:00:00"
+                
+                }
+            ]
         },
         {
             "Active": "Si",
             "ClassID": "1003",
             "Year": "2019",
             "ItemID": "145909#1",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Montaje y desmontaje de Motores",
-            "StartDate": "02/02/2019",
-            "EndDate": "23/03/2019"
+            "StartDate": "01/04/2019",
+            "EndDate": "02/04/2019",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2019 08:00:00",
+                    "end_tme": "APR-01-2019 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2019 08:00:00",
+                    "end_tme": "APR-02-2019 09:00:00"
+                
+                }
+            ]
         },
         {
             "Active": "Si",
             "ClassID": "1004",
             "Year": "2020",
             "ItemID": "145909#2",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Montaje y desmontaje de Motores",
             "StartDate": "01/04/2020",
-            "EndDate": "21/04/2020"
+            "EndDate": "02/04/2020",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2020 08:00:00",
+                    "end_tme": "APR-01-2020 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2020 08:00:00",
+                    "end_tme": "APR-02-2020 09:00:00"
+                
+                }
+            ]
         },
         {
             "Active": "Si",
             "ClassID": "1005",
             "Year": "2020",
             "ItemID": "145909#3",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Montaje y desmontaje de Motores",
             "StartDate": "01/04/2020",
-            "EndDate": "21/04/2020"
+            "EndDate": "02/04/2020",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2020 08:00:00",
+                    "end_tme": "APR-01-2020 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2020 08:00:00",
+                    "end_tme": "APR-02-2020 09:00:00"
+                
+                }
+            ]
         },
         {
             "Active": "Si",
             "ClassID": "1006",
             "Year": "2021",
             "ItemID": "145909#4",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Cursos de mecanica",
             "StartDate": "01/04/2021",
-            "EndDate": "21/04/2021"
+            "EndDate": "02/04/2021",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2021 08:00:00",
+                    "end_tme": "APR-01-2021 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2021 08:00:00",
+                    "end_tme": "APR-02-2021 09:00:00"
+                
+                }
+            ]
         },
         {
             "Active": "Si",
             "ClassID": "1007",
             "Year": "2022",
             "ItemID": "145609#9",
+            "REV_DTE": "Jan-01-2015 08:33:00",
+            "DMN_ID": "10000000",
             "Title": "Conduccion",
-            "StartDate": "14/01/2022",
-            "EndDate": "15/12/2022"
-        },
-        {
-            "Active": "Si",
-            "ClassID": "1008",
-            "Year": "2022",
-            "ItemID": "145609#12",
-            "Title": "Conduccion",
-            "StartDate": "14/01/2022",
-            "EndDate": "15/12/2022"
-        }
+            "StartDate": "01/04/2022",
+            "EndDate": "02/04/2022",
+            "Segs":[
+                {
+                    "id": "1",
+                    "start_tme": "APR-01-2022 08:00:00",
+                    "end_tme": "APR-01-2022 09:00:00"
+                
+                },
+                {
+                    "id": "2",
+                    "start_tme": "APR-02-2022 08:00:00",
+                    "end_tme": "APR-02-2022 09:00:00"
+                
+                }
+            ]}
 
 ]}
