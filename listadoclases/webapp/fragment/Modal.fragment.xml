@@ -1,6 +1,9 @@
 <core:FragmentDefinition xmlns:core = "sap.ui.core" xmlns="sap.m">
-<Dialog id="_IDGenDialog1" title="{i18n>Excluir}" >
-<Text id="Exc" text="{idArtBorrado}"></Text>
+<Dialog id="_IDGenDialog1" title="{i18n>Excluir}">
+
+<Text id="Exc" text="La clase  {jsonArticuloBorrado>/textoII} relativa al artículo {jsonArticuloBorrado>/texto} ha sido excluida del fichero de descarga"></Text>
+<endButton>
 <Button id="Close" text="{i18n>cerrar}" press="cerrarModal"></Button>
+</endButton>
 </Dialog>
 </core:FragmentDefinition>

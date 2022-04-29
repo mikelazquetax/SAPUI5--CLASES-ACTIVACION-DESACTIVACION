@@ -58,7 +58,8 @@ sap.ui.define([
 
 
                 let oJSONModelArticuloBorrado = new sap.ui.model.json.JSONModel({
-                    texto: ""
+                    texto: "",
+                    textoII: ""
                 })
 
                 oView.setModel(oJSONModelArticuloBorrado, "jsonArticuloBorrado")
@@ -485,14 +486,21 @@ sap.ui.define([
                 var data = clasesModel.getData()
 
                 var idArtBorrado = data.Clases[clasePulsado].ItemID
+                var idClassBorrada = data.Clases[clasePulsado].ClassID
 
-                if (!this._oDialogClases) {
+                if(!this._oDialogClases){
                     this._oDialogClases = sap.ui.xmlfragment("listadoclases.listadoclases.fragment.Modal", this)
                     this.getView().addDependent(this._oDialogClases)
+            }
                     this._oDialogClases.bindElement(idArtBorrado);
-                    this._oDialogClases.open()
                    
-                }
+                   
+                    var oJSONModelArticuloBorrado = this.getView().getModel("jsonArticuloBorrado")
+                    oJSONModelArticuloBorrado.setProperty("/texto", idArtBorrado)
+                    oJSONModelArticuloBorrado.setProperty("/textoII", idClassBorrada)
+                    this._oDialogClases.open()
+    
+                
 
                 data.Clases.splice(clasePulsado, 1)
 
@@ -518,6 +526,7 @@ sap.ui.define([
             },
             cerrarModal: function () {
                 this._oDialogClases.close()
+                
             }
         });
     });
